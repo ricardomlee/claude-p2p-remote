@@ -1,0 +1,31 @@
+[package]
+name = "claude-p2p-mobile"
+version = "0.1.0"
+description = "P2P Claude Code Remote - Mobile App (Tauri v2)"
+authors = ["You"]
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[lib]
+# The `_lib` suffix may seem redundant but it is necessary
+# to make the lib name unique and wouldn't conflict with the bin name.
+# This seems to be required when using the `swift` library
+# since it is a dynamic library.
+name = "claude_p2p_mobile_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = [] }
+tauri-plugin-fs = "2"
+tokio = { version = "1", features = ["full"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+anyhow = "1"
+tracing = "0.1"
+
+# WebRTC (same as daemon)
+webrtc = "0.20.0-alpha.1"
