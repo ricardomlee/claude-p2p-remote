@@ -1,0 +1,55 @@
+[workspace]
+resolver = "2"
+members = [
+    "daemon",
+    "signaling",
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+
+[workspace.dependencies]
+# Core async runtime
+tokio = { version = "1.50", features = ["full"] }
+
+# WebRTC
+webrtc = "0.20.0-alpha.1"
+
+# WebSocket
+tokio-tungstenite = "0.29"
+
+# Serialization
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+
+# Error handling
+thiserror = "2.0"
+anyhow = "1.0"
+
+# Logging
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+
+# Concurrency
+dashmap = "6.1"
+
+# Bytes
+bytes = "1.11"
+
+# UUID
+uuid = { version = "1", features = ["v4", "serde"] }
+
+# Paths
+camino = "1.2"
+
+# Futures
+futures = "0.3"
+
+# PTY / Process
+shellwords = "1.1"
+
+# Axum (signaling server)
+axum = { version = "0.8", features = ["ws"] }
+tower = "0.5"

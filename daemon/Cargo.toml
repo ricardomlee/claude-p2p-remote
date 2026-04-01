@@ -1,0 +1,31 @@
+[package]
+name = "p2p-claude-daemon"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "P2P Claude Code Daemon - WebRTC + Claude CLI"
+
+[dependencies]
+# Workspace
+tokio.workspace = true
+webrtc.workspace = true
+tokio-tungstenite.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+thiserror.workspace = true
+anyhow.workspace = true
+tracing.workspace = true
+tracing-subscriber.workspace = true
+dashmap.workspace = true
+bytes.workspace = true
+uuid.workspace = true
+camino.workspace = true
+futures.workspace = true
+shellwords.workspace = true
+
+# PTY - for interacting with Claude CLI
+portable-pty = "0.8"
+
+# AXUM - for optional HTTP endpoints
+axum.workspace = true
+tower.workspace = true
